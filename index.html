@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sadamata Coffee House</title>
   <style>
     body {
@@ -46,6 +46,33 @@
       text-decoration: underline;
     }
 
+    /* --- SLIDER STYLES --- */
+    .slider {
+      position: relative;
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slide 9s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0); }
+      33%  { transform: translateX(-100%); }
+      66%  { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+
     main {
       padding: 20px;
       text-align: center;
@@ -70,6 +97,14 @@
       <a href="#">Contact</a>
     </nav>
   </header>
+
+  <div class="slider">
+    <div class="slides">
+      <img src="cover1.jpg" alt="Cover 1" />
+      <img src="cover2.jpg" alt="Cover 2" />
+      <img src="cover3.jpg" alt="Cover 3" />
+    </div>
+  </div>
 
   <main>
     <h2>Welcome to our coffee house!</h2>
