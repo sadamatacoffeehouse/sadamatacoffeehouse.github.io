@@ -1,44 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sadamata Coffee House</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f8f4f0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #fef9f4;
+      color: #3e2723;
     }
 
     header {
-      background-color: #3e2723;
+      background: #3e2723;
       color: white;
-      padding: 20px 0;
+      padding: 20px;
       text-align: center;
     }
 
     header img {
-      display: block;
-      margin: 0 auto 15px;
-      width: 180px;
+      width: 120px;
       height: auto;
+      margin-bottom: 10px;
     }
 
     .site-title {
-      margin: 0;
-      font-size: 2em;
+      font-size: 1.8em;
+      font-weight: bold;
     }
 
     nav {
-      margin-top: 15px;
+      margin-top: 10px;
     }
 
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 10px;
       font-weight: bold;
     }
 
@@ -46,51 +50,93 @@
       text-decoration: underline;
     }
 
-    /* --- SLIDER STYLES --- */
     .slider {
       position: relative;
       width: 100%;
-      max-height: 400px;
+      height: 300px;
       overflow: hidden;
     }
 
     .slides {
       display: flex;
       width: 300%;
+      height: 100%;
       animation: slide 9s infinite;
     }
 
     .slides img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
     }
 
     @keyframes slide {
-      0%   { transform: translateX(0); }
-      33%  { transform: translateX(-100%); }
-      66%  { transform: translateX(-200%); }
+      0% { transform: translateX(0); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
       100% { transform: translateX(0); }
     }
 
-    main {
+    .features {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .features h2 {
+      margin-bottom: 20px;
+    }
+
+    .feature-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .feature-boxes div {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
       padding: 20px;
+      width: 250px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .contact {
+      background: #efebe9;
+      padding: 30px;
       text-align: center;
     }
 
     footer {
-      background-color: #3e2723;
+      background: #3e2723;
       color: white;
       text-align: center;
       padding: 10px;
-      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .feature-boxes {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .slider {
+        height: 200px;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.jpg" alt="Sadamata Coffee House Logo" />
-    <h1 class="site-title">Sadamata Coffee House</h1>
+    <img src="logo.jpg" alt="Logo" />
+    <div class="site-title">Sadamata Coffee House</div>
     <nav>
       <a href="#">Home</a>
       <a href="#">Menu</a>
@@ -106,13 +152,24 @@
     </div>
   </div>
 
-  <main>
-    <h2>Welcome to our coffee house!</h2>
-    <p>Enjoy the finest blend of coffee and a cozy atmosphere.</p>
-  </main>
+  <section class="features">
+    <h2>কেন আমাদের নির্বাচন করবেন?</h2>
+    <div class="feature-boxes">
+      <div>সদা টাটকা কফি</div>
+      <div>শান্তিপূর্ণ পরিবেশ</div>
+      <div>ফ্রি Wi-Fi</div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2>যোগাযোগ করুন</h2>
+    <p>ফোন: ০১২৩৪-৫৬৭৮৯০</p>
+    <p>ইমেইল: info@sadamatacoffeehouse.com</p>
+  </section>
 
   <footer>
-    &copy; 2025 Sadamata Coffee House. All rights reserved.
+    &copy; 2025 Sadamata Coffee House
   </footer>
+
 </body>
 </html>
