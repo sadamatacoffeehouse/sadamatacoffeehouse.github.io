@@ -4,72 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sadamata Coffee House</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: sans-serif; line-height: 1.6; background: #fff8f0; color: #3e2723; }
-    header { background: url('hero.jpg') no-repeat center center/cover; height: 80vh; color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-    header h1 { font-size: 3em; background: rgba(0,0,0,0.5); padding: 10px; }
-    nav { background: #3e2723; text-align: center; padding: 10px; }
-    nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
-    .menu-item { background: #fff; margin: 15px 0; padding: 15px; border-left: 5px solid #3e2723; }
-    .outlets, .contact { background: #fcead7; padding: 30px; border-radius: 8px; }
-    footer { background: #3e2723; color: white; text-align: center; padding: 10px; margin-top: 40px; }
-    @media (max-width: 768px) {
-      header h1 { font-size: 2em; }
-      nav a { display: block; margin: 10px 0; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-  <h1>Sadamata Coffee House</h1>
-  <p>আপনার প্রিয় কফির ঠিকানা</p>
-</header>
+  <header class="hero">
+    <div class="overlay">
+      <h1>Sadamata Coffee House</h1>
+      <p>আপনার প্রিয় কফির ঠিকানা</p>
+    </div>
+  </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#menu">Menu</a>
-  <a href="#outlets">Outlets</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <nav>
+    <ul>
+      <li><a href="#about">আমাদের সম্পর্কে</a></li>
+      <li><a href="#menu">মেনু</a></li>
+      <li><a href="#outlets">শাখাসমূহ</a></li>
+      <li><a href="#contact">যোগাযোগ</a></li>
+    </ul>
+  </nav>
 
-<section id="about">
-  <h2>About Us</h2>
-  <p>আমরা কফির প্রেমে বিশ্বাসী। Sadamata Coffee House-এ আপনি পাবেন বিশ্বমানের কফি, মনোরম পরিবেশ, এবং আন্তরিক সেবা।</p>
-</section>
+  <section id="about">
+    <h2>আমাদের সম্পর্কে</h2>
+    <p>আমরা কফির প্রেমে বিশ্বাসী। Sadamata Coffee House-এ আপনি পাবেন বিশ্বমানের কফি, মনোরম পরিবেশ, এবং আন্তরিক সেবা।</p>
+  </section>
 
-<section id="menu">
-  <h2>Our Menu</h2>
+  <section id="menu">
+    <h2>মেনু</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="images/menu1.jpg" alt="চটপটি">
+        <h3>চটপটি</h3>
+        <p>৫০ টাকা</p>
+      </div>
+      <div class="menu-item">
+        <img src="images/menu2.jpg" alt="ফুচকা">
+        <h3>ফুচকা</h3>
+        <p>৫০ টাকা</p>
+      </div>
+      <!-- আরও মেনু আইটেম যোগ করুন -->
+    </div>
+  </section>
 
-  <div class="menu-item"><h3>চটপটি</h3><p>৫০ টাকা</p></div>
-  <div class="menu-item"><h3>ফুচকা</h3><p>৫০ টাকা</p></div>
-  <div class="menu-item"><h3>চিকেন বার্গার</h3><p>১০০ টাকা</p></div>
-  <div class="menu-item"><h3>খাটামাটা</h3><p>৫০ টাকা</p></div>
-  <div class="menu-item"><h3>ফ্রেন্স ফ্রাই</h3><p>৫০ টাকা</p></div>
-  <div class="menu-item"><h3>হট কফি</h3><p>৫০ টাকা</p></div>
-  <div class="menu-item"><h3>কোল্ড কফি</h3><p>৭০ টাকা</p></div>
-  <div class="menu-item"><h3>লেয়ার চা</h3><p>৩০ টাকা</p></div>
-  <div class="menu-item"><h3>পপকর্ন</h3><p>২০ টাকা</p></div>
-  <div class="menu-item"><h3>ঝাল মুড়ি</h3><p>২০ টাকা</p></div>
+  <section id="outlets">
+    <h2>শাখাসমূহ</h2>
+    <p>সাদামাটা ভিলেজ, সামাজিক ভার্সিটি মোড়, একতারপুর, অভয়নগর, যশোর।</p>
+  </section>
 
-</section>
-
-<section id="outlets" class="outlets">
-  <h2>Our Outlets</h2>
-  <p>সাদামাটা ভিলেজ, সামাজিক ভার্সিটি মোড়, একতারপুর, অভয়নগর, যশোর।</p>
-</section>
-
-<section id="contact" class="contact">
-  <h2>যোগাযোগ করুন</h2>
-  <p>ফোন: ০১২৩৪৫৬৭৮৯০</p>
+  <section id="contact">
+  <h2>যোগাযোগ</h2>
+  <p>ফোন: <a href="tel:01712658849">০১৭১২৬৫৮৮৪৯</a></p>
+  <p>হোয়াটসঅ্যাপ: 
+    <a href="https://wa.me/8801712658849" target="_blank">চ্যাট করুন WhatsApp-এ</a>
+  </p>
   <p>ইমেইল: info@sadamatacoffeehouse.com</p>
 </section>
 
-<footer>
-  &copy; 2025 Sadamata Coffee House
-</footer>
+  <footer>
+    <p>&copy; ২০২৫ Sadamata Coffee House</p>
+  </footer>
 
 </body>
 </html>
