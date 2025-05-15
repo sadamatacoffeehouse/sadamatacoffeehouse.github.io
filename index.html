@@ -1,86 +1,93 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sadamata Coffee House</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8f8f8;
+      font-family: 'Segoe UI', sans-serif;
       text-align: center;
     }
-    header {
-      padding: 20px;
-      background: #fff;
-    }
-    .logo {
+    header img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      object-fit: cover;
+      margin-top: 20px;
     }
-    .site-title {
-      font-size: 24px;
+    h1 {
+      margin: 10px 0;
+    }
+
+    /* Slide Styles */
+    .slideshow-container {
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+    }
+    .mySlides {
+      display: none;
+    }
+    .fade {
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    /* Scrolling Marquee */
+    .marquee {
+      background: #f4f4f4;
+      padding: 10px;
       margin-top: 10px;
+    }
+    .marquee p {
+      white-space: nowrap;
+      overflow: hidden;
+      animation: scroll-left 15s linear infinite;
       font-weight: bold;
+      color: #444;
     }
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
+    @keyframes scroll-left {
+      0% {transform: translateX(100%);}
+      100% {transform: translateX(-100%);}
     }
-    .slider img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      scroll-snap-align: center;
-      flex-shrink: 0;
+
+    /* Menu Grid */
+    h2 {
+      margin-top: 30px;
+      font-size: 24px;
     }
-    marquee {
-      background: #ffcc00;
-      color: #000;
-      padding: 10px;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    .menu-title {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 20px 0 10px;
-    }
-    .menu-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 10px;
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      padding: 20px;
     }
     .menu-item {
-      width: calc(33.33% - 20px);
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
       padding: 10px;
+      border-radius: 10px;
     }
     .menu-item img {
       width: 100%;
-      height: 100px;
-      object-fit: cover;
       border-radius: 8px;
     }
     .menu-item h3 {
-      font-size: 14px;
-      margin: 5px 0;
+      margin: 10px 0 5px;
+      font-size: 16px;
     }
     .menu-item p {
-      font-size: 12px;
+      margin: 0;
+      font-size: 14px;
       color: #555;
     }
+
     footer {
-      background: #eee;
+      background-color: #f2f2f2;
       padding: 20px;
       font-size: 14px;
     }
@@ -88,87 +95,105 @@
 </head>
 <body>
 
-  <header>
-    <img src="logo.jpg" alt="Logo" class="logo">
-    <div class="site-title">Sadamata Coffee House</div>
-  </header>
+<header>
+  <img src="logo.jpg" alt="Sadamata Logo" />
+  <h1>সাদামাটা কফি হাউস</h1>
+</header>
 
-  <div class="slideshow-container">
-
+<!-- Auto Slideshow -->
+<div class="slideshow-container">
   <div class="mySlides fade">
     <img src="cover1.jpg" style="width:100%">
   </div>
-
   <div class="mySlides fade">
     <img src="cover2.jpg" style="width:100%">
   </div>
-
   <div class="mySlides fade">
     <img src="cover3.jpg" style="width:100%">
   </div>
-
 </div>
 
-  <marquee>সাদামাটা কফি হাউস সাদামাটা ভিলেজের একটি অংশ। অত্যন্ত নিরিবিলি পরিবেশ যেখানে আপনি আপনার সন্তানকে ও খেলাধুলায় অংশগ্রহণ করাতে পারবেন সম্পূর্ণ ফ্রিতে।</marquee>
+<!-- Marquee -->
+<div class="marquee">
+  <p>সাদামাটা কফি হাউস সাদামাটা ভিলেজের একটি অংশ। অত্যন্ত নিরিবিলি পরিবেশ যেখানে আপনি আপনার সন্তানকে ও খেলাধুলায় অংশগ্রহণ করাতে পারবেন সম্পূর্ণ ফ্রিতে।</p>
+</div>
 
-  <div class="menu-title">মেনু</div>
-  <div class="menu-grid">
-    <div class="menu-item">
-      <img src="menu1.jpg" alt="চটপটি">
-      <h3>চটপটি</h3>
-      <p>৫০ টাকা</p>
-    </div>
-    <div class="menu-item">
-      <img src="menu2.jpg" alt="ফুচকা">
-      <h3>ফুচকা</h3>
-      <p>৫০ টাকা</p>
-    </div>
-    <div class="menu-item">
-      <img src="menu3.jpg" alt="চিকেন বার্গার">
-      <h3>চিকেন বার্গার</h3>
-      <p>১০০ টাকা</p>
-    </div>
-    <div class="menu-item">
-      <img src="menu4.jpg" alt="খাটামাটা">
-      <h3>খাটামাটা</h3>
-      <p>৫০ টাকা</p>
-    </div>
-    <div class="menu-item">
-      <img src="menu5.jpg" alt="ফ্রেন্স ফ্রাই">
-      <h3>ফ্রেন্স ফ্রাই</h3>
-      <p>৫০ টাকা</p>
-    </div>
-    <div class="menu-item">
-      <img src="menu6.jpg" alt="হট কফি">
-      <h3>হট কফি</h3>
-      <p>৫০ টাকা</p>
-    </div>
-    <div class="menu-item">
-      <img src="menu7.jpg" alt="কোল্ড কফি">
-      <h3>কোল্ড কফি</h3>
-      <p>৭০ টাকা</p>
-    </div>
-    <div class="menu-item">
-      <img src="menu8.jpg" alt="লেয়ার চা">
-      <h3>লেয়ার চা</h3>
-      <p>৩০ টাকা</p>
-    </div>
-    <div class="menu-item">
-      <img src="menu9.jpg" alt="পপকর্ন">
-      <h3>পপকর্ন</h3>
-      <p>২০ টাকা</p>
-    </div>
-    <div class="menu-item">
-      <img src="menu10.jpg" alt="ঝাল মুড়ি">
-      <h3>ঝাল মুড়ি</h3>
-      <p>২০ টাকা</p>
-    </div>
+<!-- Menu -->
+<h2>মেনু</h2>
+<div class="menu">
+  <div class="menu-item">
+    <img src="menu1.jpg" alt="চটপটি" />
+    <h3>চটপটি</h3>
+    <p>৫০ টাকা</p>
   </div>
+  <div class="menu-item">
+    <img src="menu2.jpg" alt="ফুচকা" />
+    <h3>ফুচকা</h3>
+    <p>৫০ টাকা</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu3.jpg" alt="চিকেন বার্গার" />
+    <h3>চিকেন বার্গার</h3>
+    <p>১০০ টাকা</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu4.jpg" alt="খাটামাটা" />
+    <h3>খাটামাটা</h3>
+    <p>৫০ টাকা</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu5.jpg" alt="ফ্রেন্স ফ্রাই" />
+    <h3>ফ্রেন্স ফ্রাই</h3>
+    <p>৫০ টাকা</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu6.jpg" alt="হট কফি" />
+    <h3>হট কফি</h3>
+    <p>৫০ টাকা</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu7.jpg" alt="কোল্ড কফি" />
+    <h3>কোল্ড কফি</h3>
+    <p>৭০ টাকা</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu8.jpg" alt="লেয়ার চা" />
+    <h3>লেয়ার চা</h3>
+    <p>৩০ টাকা</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu9.jpg" alt="পপকর্ন" />
+    <h3>পপকর্ন</h3>
+    <p>২০ টাকা</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu10.jpg" alt="ঝাল মুড়ি" />
+    <h3>ঝাল মুড়ি</h3>
+    <p>২০ টাকা</p>
+  </div>
+</div>
 
-  <footer>
-    <p>ঠিকানা: সাদামাটা ভিলেজ, সামাজিক ভার্সিটি মোড়, একতারপুর, অভয়নগর, যশোর।</p>
-    <p>হোয়াটসঅ্যাপ: <a href="https://wa.me/8801712658849">০১৭১২৬৫৮৮৪৯</a></p>
-  </footer>
+<!-- Footer -->
+<footer>
+  <p>ঠিকানা: সাদামাটা ভিলেজ, সামাজিক ভার্সিটি মোড়, একতারপুর, অভয়নগর, যশোর।</p>
+  <p>WhatsApp: <a href="https://wa.me/8801712658849">০১৭১২৬৫৮৮৪৯</a></p>
+</footer>
+
+<script>
+let slideIndex = 0;
+showSlides();
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 3000); // 3 সেকেন্ড পর পরিবর্তন
+}
+</script>
 
 </body>
-  </html>
+</html>
