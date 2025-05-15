@@ -3,7 +3,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sadamata Coffee House</title>
-  <style>
+  <.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 1000px;  /* চাইলে ওয়েবসাইটের ব্যস্ততা অনুযায়ী এডজাস্ট করবে */
+  margin: 0 auto;  /* কেন্দ্রে আনবে */
+  font-size: 14px;  /* ছোট করে নিয়েছি */
+}
+
+.menu-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  font-size: 14px;
+}
+
+.menu-item img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
