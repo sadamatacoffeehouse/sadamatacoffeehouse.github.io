@@ -79,21 +79,32 @@ h1 {
 
 /* Scrolling Text */
 .marquee {
-  background: #ffe8cc;
-  padding: 10px;
+  background: #f4f4f4;
+  padding: 10px 0;
+  overflow: hidden;
+  position: relative;
+  width: 100vw; /* পুরো ভিউপোর্টের প্রস্থ */
+  box-sizing: border-box;
   margin-top: 10px;
 }
+
 .marquee p {
+  display: inline-block;
   white-space: nowrap;
-  overflow: hidden;
+  padding-left: 100%;
   animation: scroll-left 15s linear infinite;
   font-weight: bold;
-  color: #7b3f00;
+  color: #444;
+  margin: 0;
 }
+
 @keyframes scroll-left {
-  0% {transform: translateX(100%);}
-  100% {transform: translateX(-100%);}
-}
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 
 h2 {
   margin-top: 30px;
