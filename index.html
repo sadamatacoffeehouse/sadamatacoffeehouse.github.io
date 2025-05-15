@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="bn">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,197 +7,188 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
+      background-color: #fffdf5;
+      color: #333;
       text-align: center;
-    }
+    }/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #7b3f00;
+  padding: 10px 20px;
+}
+.navbar .menu {
+  display: none;
+  flex-direction: column;
+  background-color: #7b3f00;
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.navbar .menu a {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+.navbar .menu-btn {
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.navbar:hover .menu {
+  display: flex;
+}
 
-    /* Navbar styles */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: #333;
-      overflow: hidden;
-      z-index: 1000;
-    }
-    .navbar .menu-icon {
-      float: right;
-      display: block;
-      padding: 14px 20px;
-      font-size: 20px;
-      color: white;
-      cursor: pointer;
-    }
-    .navbar .menu-items {
-      display: none;
-      position: absolute;
-      right: 20px;
-      background-color: #333;
-      border: 1px solid #555;
-      border-radius: 5px;
-      text-align: left;
-    }
-    .navbar .menu-items a {
-      display: block;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-    }
-    .navbar .menu-items a:hover {
-      background-color: #555;
-    }
+header img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+h1 {
+  margin: 10px 0;
+  font-size: 28px;
+}
 
-    header {
-      padding-top: 60px;
-    }
+/* Slideshow */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+.mySlides {
+  display: none;
+}
+.mySlides img {
+  width: 100%;
+  height: auto;
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-top: 20px;
-    }
-    h1 {
-      margin: 10px 0;
-    }
+/* Scrolling Text */
+.marquee {
+  background: #ffe8cc;
+  padding: 10px;
+  margin-top: 10px;
+}
+.marquee p {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: scroll-left 15s linear infinite;
+  font-weight: bold;
+  color: #7b3f00;
+}
+@keyframes scroll-left {
+  0% {transform: translateX(100%);}
+  100% {transform: translateX(-100%);}
+}
 
-    .slideshow-container {
-      max-width: 100%;
-      position: relative;
-      margin: auto;
-    }
-    .mySlides {
-      display: none;
-    }
-    .fade {
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-    @keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
+h2 {
+  margin-top: 30px;
+  font-size: 24px;
+}
 
-    .marquee {
-      background: #f4f4f4;
-      padding: 10px;
-      margin-top: 10px;
-    }
-    .marquee p {
-      white-space: nowrap;
-      overflow: hidden;
-      animation: scroll-left 15s linear infinite;
-      font-weight: bold;
-      color: #444;
-    }
-    @keyframes scroll-left {
-      0% {transform: translateX(100%);}
-      100% {transform: translateX(-100%);}
-    }
+.menu-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.menu-item {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+.menu-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.menu-item h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+.menu-item p {
+  margin: 0;
+  font-size: 14px;
+}
 
-    h2 {
-      margin-top: 30px;
-      font-size: 24px;
-    }
-    .menu {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-    .menu-item {
-      border: 1px solid #ddd;
-      padding: 10px;
-      border-radius: 10px;
-    }
-    .menu-item img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .menu-item h3 {
-      margin: 10px 0 5px;
-      font-size: 16px;
-    }
-    .menu-item p {
-      margin: 0;
-      font-size: 14px;
-      color: #555;
-    }
+footer {
+  background-color: #f2f2f2;
+  padding: 20px;
+  font-size: 14px;
+  color: #555;
+}
 
-    footer {
-      background-color: #f2f2f2;
-      padding: 20px;
-      font-size: 14px;
-    }
   </style>
 </head>
 <body>
-
-<!-- Navbar -->
-<div class="navbar">
-  <div class="menu-icon" onclick="toggleMenu()">≡</div>
-  <div class="menu-items" id="menuItems">
-    <a href="#home">হোম</a>
-    <a href="#menu">মেনু</a>
-    <a href="#about">এবাউট</a>
-    <a href="#contact">কন্ট্রাক্ট</a>
-  </div>
-</div>
-
-<header id="home">
-  <img src="logo.jpg" alt="Sadamata Logo" />
-  <h1>সাদামাটা কফি হাউজ</h1>
-</header>
-
-<!-- Auto Slideshow -->
-<div class="slideshow-container">
-  <div class="mySlides fade">
-    <img src="cover1.jpg" style="width:100%">
-  </div>
-  <div class="mySlides fade">
-    <img src="cover2.jpg" style="width:100%">
-  </div>
-  <div class="mySlides fade">
-    <img src="cover3.jpg" style="width:100%">
-  </div>
-</div>
-
-<!-- Marquee -->
-<div class="marquee">
-  <p>সাদামাটা কফি হাউস সাদামাটা ভিলেজের একটি অংশ। অত্যন্ত নিরিবিলি পরিবেশ, যেখানে আপনি আপনার সন্তানকে খেলাধুলায় অংশগ্রহণ করাতে পারবেন সম্পূর্ণ ফ্রিতে।</p>
-</div>
-
-<!-- Menu -->
-<h2 id="menu">মেনু</h2>
-<div class="menu">
-  <!-- Menu items here, as you have already provided -->
-</div>
-
-<!-- Footer -->
-<footer id="contact">
+  <div class="navbar">
+    <button class="menu-btn">&#9776;</button>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </div>
+  </div>  <header>
+    <img src="logo.jpg" alt="Sadamata Logo" />
+    <h1>Sadamata Coffee House</h1>
+  </header>  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="cover1.jpg" alt="Cover 1">
+    </div>
+    <div class="mySlides fade">
+      <img src="cover2.jpg" alt="Cover 2">
+    </div>
+    <div class="mySlides fade">
+      <img src="cover3.jpg" alt="Cover 3">
+    </div>
+  </div>  <div class="marquee">
+    <p>Sadamata Coffee House is a part of Sadamata Village. A peaceful place where your children can enjoy playing freely.</p>
+  </div>  <h2 id="menu">Menu</h2>
+  <div class="menu-section">
+    <div class="menu-item"><img src="menu1.jpg" alt="Chotpoti"><h3>Chotpoti</h3><p>50 BDT</p></div>
+    <div class="menu-item"><img src="menu2.jpg" alt="Fuchka"><h3>Fuchka</h3><p>50 BDT</p></div>
+    <div class="menu-item"><img src="menu3.jpg" alt="Chicken Burger"><h3>Chicken Burger</h3><p>100 BDT</p></div>
+    <div class="menu-item"><img src="menu4.jpg" alt="Khatamata"><h3>Khatamata</h3><p>50 BDT</p></div>
+    <div class="menu-item"><img src="menu5.jpg" alt="French Fry"><h3>French Fry</h3><p>50 BDT</p></div>
+    <div class="menu-item"><img src="menu6.jpg" alt="Hot Coffee"><h3>Hot Coffee</h3><p>50 BDT</p></div>
+    <div class="menu-item"><img src="menu7.jpg" alt="Cold Coffee"><h3>Cold Coffee</h3><p>70 BDT</p></div>
+    <div class="menu-item"><img src="menu8.jpg" alt="Layer Tea"><h3>Layer Tea</h3><p>30 BDT</p></div>
+    <div class="menu-item"><img src="menu9.jpg" alt="Popcorn"><h3>Popcorn</h3><p>20 BDT</p></div>
+    <div class="menu-item"><img src="menu10.jpg" alt="Jhal Muri"><h3>Jhal Muri</h3><p>20 BDT</p></div>
+  </div>  <footer id="contact">
+    <!-- Footer -->
+<footer>
   <p>ঠিকানা: সাদামাটা ভিলেজ, সামাজিক ভার্সিটি মোড়, একতারপুর, অভয়নগর, যশোর।</p>
-  <p>WhatsApp: <a href="https://wa.me/8801712658849">০১৭১২৬৫৮৮৪৯</a></p>
+  <p>WhatsApp: <a href="https://wa.me/8801712658849">01712658849</a></p>
+  <p>&copy; 2025 Sadamata Coffee House. All rights reserved.</p>
 </footer>
-
-<script>
-let slideIndex = 0;
-showSlides();
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  slides[slideIndex-1].style.display = "block";  
-  setTimeout(showSlides, 3000); 
-}
-
-function toggleMenu() {
-  const menu = document.getElementById("menuItems");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-</script>
-
-</body>
-</html>
+    let slideIndex = 0;
+    showSlides();
+    function showSlides() {
+      let slides = document.getElementsByClassName("mySlides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+  </script></body>
+  </html>
