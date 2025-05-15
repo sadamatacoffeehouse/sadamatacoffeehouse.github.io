@@ -1,62 +1,46 @@
 <!DOCTYPE html><html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sadamata Coffee House</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fff9f5;
-    }/* Navbar */
-.navbar {
+      background-color: #fffef8;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      padding-top: 20px;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+    }
+    header h1 {
+      margin: 10px 0;
+      font-size: 28px;
+    }/* Navigation Menu */
+.nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #5c4033;
-  color: white;
-}
-.menu-toggle {
-  font-size: 24px;
-  cursor: pointer;
-}
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: #5c4033;
-  border-radius: 10px;
+  justify-content: flex-end;
+  background-color: #222;
   padding: 10px;
-  z-index: 999;
 }
-.nav-links a {
+.nav select {
+  background: #444;
   color: white;
-  text-decoration: none;
-  padding: 8px 12px;
-}
-.nav-links a:hover {
-  background-color: #7c5a44;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
 }
 
-header {
-  text-align: center;
-  margin-top: 10px;
-}
-header img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-}
-header h1 {
-  font-size: 26px;
-  margin: 10px 0;
-}
-
+/* Slideshow */
 .slideshow-container {
   max-width: 100%;
+  position: relative;
   margin: auto;
 }
 .mySlides {
@@ -67,21 +51,21 @@ header h1 {
   animation-duration: 1.5s;
 }
 @keyframes fade {
-  from {opacity: .4}
+  from {opacity: .4} 
   to {opacity: 1}
 }
 
+/* Marquee */
 .marquee {
-  background: #ffe9d6;
-  padding: 12px;
+  background: #f4f4f4;
+  padding: 10px;
   overflow: hidden;
 }
 .marquee p {
-  white-space: nowrap;
   display: inline-block;
+  white-space: nowrap;
   animation: scroll-left 15s linear infinite;
   font-weight: bold;
-  font-size: 16px;
   color: #444;
 }
 @keyframes scroll-left {
@@ -89,107 +73,144 @@ header h1 {
   100% {transform: translateX(-100%);}
 }
 
-.animated-heading {
-  font-size: 28px;
+/* Menu */
+.menu-heading {
+  font-size: 32px;
   font-weight: bold;
-  text-align: center;
-  color: #5c4033;
-  animation: popIn 1.2s ease-in-out;
-  margin-top: 30px;
+  animation: bounce 2s infinite;
+  margin-top: 40px;
+  color: #d35400;
 }
-@keyframes popIn {
-  0% {opacity: 0; transform: scale(0.8);}
-  100% {opacity: 1; transform: scale(1);}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
-
 .menu {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 15px;
   padding: 20px;
 }
 .menu-item {
-  background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 10px;
   padding: 10px;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  background: #fff;
 }
 .menu-item img {
   width: 100%;
   border-radius: 8px;
-  height: 140px;
-  object-fit: cover;
 }
 .menu-item h3 {
+  margin: 10px 0 5px;
   font-size: 16px;
-  margin: 8px 0 4px;
 }
 .menu-item p {
-  font-size: 14px;
   margin: 0;
+  font-size: 14px;
+  color: #555;
 }
 
 footer {
-  background-color: #5c4033;
-  color: white;
+  background-color: #f2f2f2;
   padding: 20px;
-  text-align: center;
+  font-size: 14px;
 }
 
   </style>
 </head>
-<body><div class="navbar">
-  <div>Sadamata</div>
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  <div class="nav-links" id="navLinks">
-    <a href="#">Home</a>
-    <a href="#menu">Menu</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-  </div>
+<body><!-- Navigation Menu --><div class="nav">
+  <select onchange="location = this.value;">
+    <option value="#">Menu</option>
+    <option value="#">Home</option>
+    <option value="#menu">Menu</option>
+    <option value="#contact">Contact</option>
+    <option value="#about">About</option>
+  </select>
 </div><header>
-  <img src="logo.jpg" alt="Logo">
+  <img src="logo.jpg" alt="Sadamata Logo" />
   <h1>Sadamata Coffee House</h1>
-</header><div class="slideshow-container">
-  <div class="mySlides fade"><img src="cover1.jpg" style="width:100%"></div>
-  <div class="mySlides fade"><img src="cover2.jpg" style="width:100%"></div>
-  <div class="mySlides fade"><img src="cover3.jpg" style="width:100%"></div>
-</div><div class="marquee">
+</header><!-- Slideshow --><div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="cover1.jpg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="cover2.jpg" style="width:100%">
+  </div>
+  <div class="mySlides fade">
+    <img src="cover3.jpg" style="width:100%">
+  </div>
+</div><!-- Marquee --><div class="marquee">
   <p>সাদামাটা কফি হাউস সাদামাটা ভিলেজের একটি অংশ। অত্যন্ত নিরিবিলি পরিবেশ, যেখানে আপনি আপনার সন্তানকে খেলাধুলায় অংশগ্রহণ করাতে পারবেন সম্পূর্ণ ফ্রিতে।</p>
-</div><h2 class="animated-heading">Menu</h2>
-<div class="menu" id="menu">
-  <div class="menu-item"><img src="menu1.jpg" alt="চটপটি"><h3>চটপটি</h3><p>৫০ টাকা</p></div>
-  <div class="menu-item"><img src="menu2.jpg" alt="ফুচকা"><h3>ফুচকা</h3><p>৫০ টাকা</p></div>
-  <div class="menu-item"><img src="menu3.jpg" alt="চিকেন বার্গার"><h3>চিকেন বার্গার</h3><p>১০০ টাকা</p></div>
-  <div class="menu-item"><img src="menu4.jpg" alt="ফ্রেঞ্চ ফ্রাই"><h3>ফ্রেঞ্চ ফ্রাই</h3><p>৫০ টাকা</p></div>
-  <div class="menu-item"><img src="menu5.jpg" alt="হট কফি"><h3>হট কফি</h3><p>৫০ টাকা</p></div>
-  <div class="menu-item"><img src="menu6.jpg" alt="কোল্ড কফি"><h3>কোল্ড কফি</h3><p>৭০ টাকা</p></div>
-  <div class="menu-item"><img src="menu7.jpg" alt="লেয়ার চা"><h3>লেয়ার চা</h3><p>৩০ টাকা</p></div>
-  <div class="menu-item"><img src="menu8.jpg" alt="পপকর্ন"><h3>পপকর্ন</h3><p>২০ টাকা</p></div>
-  <div class="menu-item"><img src="menu9.jpg" alt="ঝাল মুড়ি"><h3>ঝাল মুড়ি</h3><p>২০ টাকা</p></div>
-  <div class="menu-item"><img src="menu10.jpg" alt="স্ন্যাকস"><h3>স্ন্যাকস</h3><p>৪০ টাকা</p></div>
-</div><footer id="contact">
+</div><!-- Menu Section --><h2 class="menu-heading">MENU</h2>
+<div class="menu">
+  <div class="menu-item">
+    <img src="menu1.jpg" alt="চটপটি" />
+    <h3>চটপটি</h3>
+    <p>৳50</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu2.jpg" alt="ফুচকা" />
+    <h3>ফুচকা</h3>
+    <p>৳50</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu3.jpg" alt="চিকেন বার্গার" />
+    <h3>চিকেন বার্গার</h3>
+    <p>৳100</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu4.jpg" alt="খাটামাটা" />
+    <h3>খাটামাটা</h3>
+    <p>৳50</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu5.jpg" alt="ফ্রেঞ্চ ফ্রাই" />
+    <h3>ফ্রেঞ্চ ফ্রাই</h3>
+    <p>৳50</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu6.jpg" alt="হট কফি" />
+    <h3>হট কফি</h3>
+    <p>৳50</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu7.jpg" alt="কোল্ড কফি" />
+    <h3>কোল্ড কফি</h3>
+    <p>৳70</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu8.jpg" alt="লেয়ার চা" />
+    <h3>লেয়ার চা</h3>
+    <p>৳30</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu9.jpg" alt="পপকর্ন" />
+    <h3>পপকর্ন</h3>
+    <p>৳20</p>
+  </div>
+  <div class="menu-item">
+    <img src="menu10.jpg" alt="ঝাল মুড়ি" />
+    <h3>ঝাল মুড়ি</h3>
+    <p>৳20</p>
+  </div>
+</div><!-- Footer --><footer id="contact">
   <p>ঠিকানা: সাদামাটা ভিলেজ, সামাজিক ভার্সিটি মোড়, একতারপুর, অভয়নগর, যশোর।</p>
-  <p>WhatsApp: <a href="https://wa.me/8801712658849" style="color: #fff; text-decoration: underline;">+8801712658849</a></p>
-  <p>&copy; 2025 Sadamata Coffee House</p>
-</footer><script>
-function toggleMenu() {
-  const nav = document.getElementById("navLinks");
-  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
-}
-
+  <p>WhatsApp: <a href="https://wa.me/8801712658849">+8801712658849</a></p>
+  <p>&copy; 2025 Sadamata Coffee House. All rights reserved.</p>
+</footer><!-- Slideshow Script --><script>
 let slideIndex = 0;
+showSlides();
 function showSlides() {
-  const slides = document.getElementsByClassName("mySlides");
-  for (let i = 0; i < slides.length; i++) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1; }
+  if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 3000);
 }
-showSlides();
 </script></body>
-                           </html>
+      </html>
