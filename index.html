@@ -1,120 +1,87 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sadamata Coffee House</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #fffbe9;
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
       text-align: center;
     }
     header {
-      background-color: #3e2723;
-      color: white;
-      padding: 30px 10px;
+      padding: 20px;
+      background: #fff;
     }
-    header img {
+    .logo {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid white;
-      display: block;
-      margin: 0 auto 10px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
+    .site-title {
+      font-size: 24px;
+      margin-top: 10px;
+      font-weight: bold;
     }
-
     .slider {
-      position: relative;
-      max-width: 600px;
-      margin: 20px auto;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
     }
-    .slides img {
+    .slider img {
       width: 100%;
-      display: none;
+      height: 250px;
+      object-fit: cover;
+      scroll-snap-align: center;
+      flex-shrink: 0;
     }
-    .slides img.active {
-      display: block;
-    }
-
-    .marquee {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      box-sizing: border-box;
-      background-color: #fceabb;
-      padding: 10px 0;
-      margin-top: 20px;
-    }
-
-    .marquee p {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 20s linear infinite;
-      font-size: 16px;
-      color: #3e2723;
+    marquee {
+      background: #ffcc00;
+      color: #000;
+      padding: 10px;
       font-weight: bold;
+      font-size: 14px;
     }
-
-    @keyframes marquee {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-
     .menu-title {
-      font-size: 30px;
+      font-size: 20px;
       font-weight: bold;
-      margin-top: 30px;
-      color: #3e2723;
+      margin: 20px 0 10px;
     }
-
     .menu-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .menu-item {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 250px;
+      gap: 10px;
       padding: 10px;
     }
-
+    .menu-item {
+      width: calc(33.33% - 20px);
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 10px;
+    }
     .menu-item img {
       width: 100%;
-      height: 150px;
+      height: 100px;
       object-fit: cover;
       border-radius: 8px;
     }
-
     .menu-item h3 {
-      margin: 10px 0 5px;
-      font-size: 18px;
-    }
-
-    .menu-item p {
       font-size: 14px;
+      margin: 5px 0;
+    }
+    .menu-item p {
+      font-size: 12px;
       color: #555;
     }
-
     footer {
-      background: #3e2723;
-      color: white;
-      padding: 10px;
+      background: #eee;
+      padding: 20px;
       font-size: 14px;
     }
   </style>
@@ -122,25 +89,20 @@
 <body>
 
   <header>
-    <img src="logo.jpg" alt="Sadamata Logo" />
-    <h1>Sadamata Coffee House</h1>
+    <img src="logo.jpg" alt="Logo" class="logo">
+    <div class="site-title">Sadamata Coffee House</div>
   </header>
 
   <div class="slider">
-    <div class="slides">
-      <img src="cover1.jpg" alt="কভার ১" class="active" />
-      <img src="cover2.jpg" alt="কভার ২" />
-      <img src="cover3.jpg" alt="কভার ৩" />
-    </div>
+    <img src="cover1.jpg" alt="Cover 1">
+    <img src="cover2.jpg" alt="Cover 2">
+    <img src="cover3.jpg" alt="Cover 3">
   </div>
 
-  <div class="marquee">
-    <p>সাদামাটা কফি হাউস সাদামাটা ভিলেজের একটি অংশ। অত্যন্ত নিরিবিলি পরিবেশ যেখানে আপনি আপনার সন্তানকে ও খেলাধুলায় অংশগ্রহণ করাতে পারবেন সম্পূর্ণ ফ্রিতে</p>
-  </div>
+  <marquee>সাদামাটা কফি হাউস সাদামাটা ভিলেজের একটি অংশ। অত্যন্ত নিরিবিলি পরিবেশ যেখানে আপনি আপনার সন্তানকে ও খেলাধুলায় অংশগ্রহণ করাতে পারবেন সম্পূর্ণ ফ্রিতে।</marquee>
 
   <div class="menu-title">মেনু</div>
-
-  <section class="menu-grid">
+  <div class="menu-grid">
     <div class="menu-item">
       <img src="menu1.jpg" alt="চটপটি">
       <h3>চটপটি</h3>
@@ -191,24 +153,12 @@
       <h3>ঝাল মুড়ি</h3>
       <p>২০ টাকা</p>
     </div>
-  </section>
+  </div>
 
   <footer>
-    &copy; ২০২৫ Sadamata Coffee House
+    <p>ঠিকানা: সাদামাটা ভিলেজ, সামাজিক ভার্সিটি মোড়, একতারপুর, অভয়নগর, যশোর।</p>
+    <p>হোয়াটসঅ্যাপ: <a href="https://wa.me/8801712658849">০১৭১২৬৫৮৮৪৯</a></p>
   </footer>
 
-  <script>
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slides img");
-
-    function showSlides() {
-      slides.forEach((slide) => slide.classList.remove("active"));
-      slideIndex = (slideIndex + 1) % slides.length;
-      slides[slideIndex].classList.add("active");
-    }
-
-    setInterval(showSlides, 3000);
-  </script>
-
 </body>
-</html>
+  </html>
