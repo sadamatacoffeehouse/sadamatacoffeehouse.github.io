@@ -1,219 +1,195 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="bn">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sadamata Coffee House</title>
-  <.menu {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 15px;
-  padding: 20px;
-  max-width: 1000px;  /* চাইলে ওয়েবসাইটের ব্যস্ততা অনুযায়ী এডজাস্ট করবে */
-  margin: 0 auto;  /* কেন্দ্রে আনবে */
-  font-size: 14px;  /* ছোট করে নিয়েছি */
-}
-
-.menu-item {
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  font-size: 14px;
-}
-
-.menu-item img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 8px;
-}>
+  <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #fffdf5;
-      color: #333;
-      text-align: center;
+      background-color: #fff9f5;
     }/* Navbar */
 .navbar {
   display: flex;
-  justify-content: flex-end;
-  background-color: #7b3f00;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
-}
-.navbar .menu {
-  display: none;
-  flex-direction: column;
-  background-color: #7b3f00;
-  position: absolute;
-  right: 20px;
-  top: 50px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.navbar .menu a {
-  padding: 10px;
-  text-decoration: none;
+  background-color: #5c4033;
   color: white;
-  display: block;
 }
-.navbar .menu-btn {
+.menu-toggle {
   font-size: 24px;
-  color: white;
-  background: none;
-  border: none;
   cursor: pointer;
 }
-.navbar:hover .menu {
-  display: flex;
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #5c4033;
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 999;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+}
+.nav-links a:hover {
+  background-color: #7c5a44;
 }
 
+header {
+  text-align: center;
+  margin-top: 10px;
+}
 header img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  margin-top: 20px;
 }
-h1 {
+header h1 {
+  font-size: 26px;
   margin: 10px 0;
-  font-size: 28px;
 }
 
-/* Slideshow */
 .slideshow-container {
   max-width: 100%;
-  position: relative;
   margin: auto;
 }
 .mySlides {
   display: none;
-}
-.mySlides img {
-  width: 100%;
-  height: auto;
 }
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
 }
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
-/* Scrolling Text */
 .marquee {
-  background: #f4f4f4;
-  padding: 10px 0;
+  background: #ffe9d6;
+  padding: 12px;
   overflow: hidden;
-  position: relative;
-  width: 100vw; /* পুরো ভিউপোর্টের প্রস্থ */
-  box-sizing: border-box;
-  margin-top: 10px;
 }
-
 .marquee p {
-  display: inline-block;
   white-space: nowrap;
-  padding-left: 100%;
+  display: inline-block;
   animation: scroll-left 15s linear infinite;
   font-weight: bold;
+  font-size: 16px;
   color: #444;
-  margin: 0;
 }
-
 @keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-
-h2 {
-  margin-top: 30px;
-  font-size: 24px;
+  0% {transform: translateX(100%);}
+  100% {transform: translateX(-100%);}
 }
 
-.menu-section {
+.animated-heading {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #5c4033;
+  animation: popIn 1.2s ease-in-out;
+  margin-top: 30px;
+}
+@keyframes popIn {
+  0% {opacity: 0; transform: scale(0.8);}
+  100% {opacity: 1; transform: scale(1);}
+}
+
+.menu {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  gap: 15px;
   padding: 20px;
 }
 .menu-item {
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 10px;
-  background-color: #fff;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
 }
 .menu-item img {
   width: 100%;
-  height: auto;
   border-radius: 8px;
+  height: 140px;
+  object-fit: cover;
 }
 .menu-item h3 {
-  margin: 10px 0 5px;
-  font-size: 18px;
+  font-size: 16px;
+  margin: 8px 0 4px;
 }
 .menu-item p {
-  margin: 0;
   font-size: 14px;
+  margin: 0;
 }
 
 footer {
-  background-color: #f2f2f2;
+  background-color: #5c4033;
+  color: white;
   padding: 20px;
-  font-size: 14px;
-  color: #555;
+  text-align: center;
 }
 
   </style>
 </head>
-<body>
-  <div class="navbar">
-    <button class="menu-btn">&#9776;</button>
-    <div class="menu">
-      <a href="#">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-    </div>
-  </div>  <header>
-    <img src="logo.jpg" alt="Sadamata Logo" />
-    <h1>Sadamata Coffee House</h1>
-  </header>  <div class="slideshow-container">
-    <div class="mySlides fade">
-      <img src="cover1.jpg" alt="Cover 1">
-    </div>
-    <div class="mySlides fade">
-      <img src="cover2.jpg" alt="Cover 2">
-    </div>
-    <div class="mySlides fade">
-      <img src="cover3.jpg" alt="Cover 3">
-    </div>
-  </div>  <div class="marquee">
-    <p>Sadamata Coffee House is a part of Sadamata Village. A peaceful place where your children can enjoy playing freely.</p>
-  </div>  <h2 id="menu">Menu</h2>
-  <div class="menu-section">
-    <div class="menu-item"><img src="menu1.jpg" alt="Chotpoti"><h3>Chotpoti</h3><p>50 BDT</p></div>
-    <div class="menu-item"><img src="menu2.jpg" alt="Fuchka"><h3>Fuchka</h3><p>50 BDT</p></div>
-    <div class="menu-item"><img src="menu3.jpg" alt="Chicken Burger"><h3>Chicken Burger</h3><p>100 BDT</p></div>
-    <div class="menu-item"><img src="menu4.jpg" alt="Khatamata"><h3>Khatamata</h3><p>50 BDT</p></div>
-    <div class="menu-item"><img src="menu5.jpg" alt="French Fry"><h3>French Fry</h3><p>50 BDT</p></div>
-    <div class="menu-item"><img src="menu6.jpg" alt="Hot Coffee"><h3>Hot Coffee</h3><p>50 BDT</p></div>
-    <div class="menu-item"><img src="menu7.jpg" alt="Cold Coffee"><h3>Cold Coffee</h3><p>70 BDT</p></div>
-    <div class="menu-item"><img src="menu8.jpg" alt="Layer Tea"><h3>Layer Tea</h3><p>30 BDT</p></div>
-    <div class="menu-item"><img src="menu9.jpg" alt="Popcorn"><h3>Popcorn</h3><p>20 BDT</p></div>
-    <div class="menu-item"><img src="menu10.jpg" alt="Jhal Muri"><h3>Jhal Muri</h3><p>20 BDT</p></div>
-  </div>  <footer id="contact">
-    <!-- Footer -->
-<footer>
+<body><div class="navbar">
+  <div>Sadamata</div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <div class="nav-links" id="navLinks">
+    <a href="#">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+</div><header>
+  <img src="logo.jpg" alt="Logo">
+  <h1>Sadamata Coffee House</h1>
+</header><div class="slideshow-container">
+  <div class="mySlides fade"><img src="cover1.jpg" style="width:100%"></div>
+  <div class="mySlides fade"><img src="cover2.jpg" style="width:100%"></div>
+  <div class="mySlides fade"><img src="cover3.jpg" style="width:100%"></div>
+</div><div class="marquee">
+  <p>সাদামাটা কফি হাউস সাদামাটা ভিলেজের একটি অংশ। অত্যন্ত নিরিবিলি পরিবেশ, যেখানে আপনি আপনার সন্তানকে খেলাধুলায় অংশগ্রহণ করাতে পারবেন সম্পূর্ণ ফ্রিতে।</p>
+</div><h2 class="animated-heading">Menu</h2>
+<div class="menu" id="menu">
+  <div class="menu-item"><img src="menu1.jpg" alt="চটপটি"><h3>চটপটি</h3><p>৫০ টাকা</p></div>
+  <div class="menu-item"><img src="menu2.jpg" alt="ফুচকা"><h3>ফুচকা</h3><p>৫০ টাকা</p></div>
+  <div class="menu-item"><img src="menu3.jpg" alt="চিকেন বার্গার"><h3>চিকেন বার্গার</h3><p>১০০ টাকা</p></div>
+  <div class="menu-item"><img src="menu4.jpg" alt="ফ্রেঞ্চ ফ্রাই"><h3>ফ্রেঞ্চ ফ্রাই</h3><p>৫০ টাকা</p></div>
+  <div class="menu-item"><img src="menu5.jpg" alt="হট কফি"><h3>হট কফি</h3><p>৫০ টাকা</p></div>
+  <div class="menu-item"><img src="menu6.jpg" alt="কোল্ড কফি"><h3>কোল্ড কফি</h3><p>৭০ টাকা</p></div>
+  <div class="menu-item"><img src="menu7.jpg" alt="লেয়ার চা"><h3>লেয়ার চা</h3><p>৩০ টাকা</p></div>
+  <div class="menu-item"><img src="menu8.jpg" alt="পপকর্ন"><h3>পপকর্ন</h3><p>২০ টাকা</p></div>
+  <div class="menu-item"><img src="menu9.jpg" alt="ঝাল মুড়ি"><h3>ঝাল মুড়ি</h3><p>২০ টাকা</p></div>
+  <div class="menu-item"><img src="menu10.jpg" alt="স্ন্যাকস"><h3>স্ন্যাকস</h3><p>৪০ টাকা</p></div>
+</div><footer id="contact">
   <p>ঠিকানা: সাদামাটা ভিলেজ, সামাজিক ভার্সিটি মোড়, একতারপুর, অভয়নগর, যশোর।</p>
-  <p>WhatsApp: <a href="https://wa.me/8801712658849">01712658849</a></p>
-  <p>&copy; 2025 Sadamata Coffee House. All rights reserved.</p>
-</footer>
-    
-  </script></body>
-  </html>
+  <p>WhatsApp: <a href="https://wa.me/8801712658849" style="color: #fff; text-decoration: underline;">+8801712658849</a></p>
+  <p>&copy; 2025 Sadamata Coffee House</p>
+</footer><script>
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+}
+
+let slideIndex = 0;
+function showSlides() {
+  const slides = document.getElementsByClassName("mySlides");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 3000);
+}
+showSlides();
+</script></body>
+                           </html>
