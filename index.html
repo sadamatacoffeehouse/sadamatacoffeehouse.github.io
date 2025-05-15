@@ -1,79 +1,214 @@
 <!DOCTYPE html>
 <html lang="bn">
-<<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Sadamata Coffee House</title>
-  
-  <meta name="description" content="সাদামাটা কফি হাউজ - যশোরের অভয়নগরের জনপ্রিয় খাবার হাউজ যেখানে পাবেন কফি, চটপটি, ফুচকা, বার্গার, ফ্রেন্স ফ্রাই এবং আরও অনেক কিছু।">
-  
-  <meta name="keywords" content="Sadamata Coffee House, কফি, ফুচকা, চটপটি, বার্গার, রেস্টুরেন্ট, অভয়নগর, যশোর">
-  
-  <meta name="author" content="Sadamata Coffee House">
-</head>>
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sadamata Coffee House</title>
-  <link rel="stylesheet" href="style.css" />
-</<meta name="google-site-verification" content="Ywsz_uGDCpqPcswpHGFgX5XkYmLBO7cxV8J0lmdWHDU" />>
-<<meta name="google-site-verification" content="Ywsz_uGDCpqPcswpHGFgX5XkYmLBO7cxV8J0lmdWHDU" />>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffbe9;
+      text-align: center;
+    }
+    header {
+      background-color: #3e2723;
+      color: white;
+      padding: 30px 10px;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      display: block;
+      margin: 0 auto 10px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
 
-  <header class="hero">
-    <div class="overlay">
-      <h1>Sadamata Coffee House</h1>
-      <p>আপনার প্রিয় কফির ঠিকানা</p>
-    </div>
+    .slider {
+      position: relative;
+      max-width: 600px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    .slides img {
+      width: 100%;
+      display: none;
+    }
+    .slides img.active {
+      display: block;
+    }
+
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      background-color: #fceabb;
+      padding: 10px 0;
+      margin-top: 20px;
+    }
+
+    .marquee p {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 20s linear infinite;
+      font-size: 16px;
+      color: #3e2723;
+      font-weight: bold;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .menu-title {
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: 30px;
+      color: #3e2723;
+    }
+
+    .menu-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .menu-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 10px;
+    }
+
+    .menu-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .menu-item h3 {
+      margin: 10px 0 5px;
+      font-size: 18px;
+    }
+
+    .menu-item p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    footer {
+      background: #3e2723;
+      color: white;
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Sadamata Logo" />
+    <h1>Sadamata Coffee House</h1>
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="#about">আমাদের সম্পর্কে</a></li>
-      <li><a href="#menu">মেনু</a></li>
-      <li><a href="#outlets">শাখাসমূহ</a></li>
-      <li><a href="#contact">যোগাযোগ</a></li>
-    </ul>
-  </nav>
+  <div class="slider">
+    <div class="slides">
+      <img src="cover1.jpg" alt="কভার ১" class="active" />
+      <img src="cover2.jpg" alt="কভার ২" />
+      <img src="cover3.jpg" alt="কভার ৩" />
+    </div>
+  </div>
 
-  <section id="about">
-    <h2>আমাদের সম্পর্কে</h2>
-    <p>আমরা কফির প্রেমে বিশ্বাসী। Sadamata Coffee House-এ আপনি পাবেন বিশ্বমানের কফি, মনোরম পরিবেশ, এবং আন্তরিক সেবা।</p>
-  </section>
+  <div class="marquee">
+    <p>সাদামাটা কফি হাউস সাদামাটা ভিলেজের একটি অংশ। অত্যন্ত নিরিবিলি পরিবেশ যেখানে আপনি আপনার সন্তানকে ও খেলাধুলায় অংশগ্রহণ করাতে পারবেন সম্পূর্ণ ফ্রিতে</p>
+  </div>
 
-  <section id="menu">
-    <h2>মেনু</h2>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <img src="images/menu1.jpg" alt="চটপটি">
-        <h3>চটপটি</h3>
-        <p>৫০ টাকা</p>
-      </div>
-      <div class="menu-item">
-        <img src="images/menu2.jpg" alt="ফুচকা">
-        <h3>ফুচকা</h3>
-        <p>৫০ টাকা</p>
-      </div>
-      <!-- আরও মেনু আইটেম যোগ করুন -->
+  <div class="menu-title">মেনু</div>
+
+  <section class="menu-grid">
+    <div class="menu-item">
+      <img src="menu1.jpg" alt="চটপটি">
+      <h3>চটপটি</h3>
+      <p>৫০ টাকা</p>
+    </div>
+    <div class="menu-item">
+      <img src="menu2.jpg" alt="ফুচকা">
+      <h3>ফুচকা</h3>
+      <p>৫০ টাকা</p>
+    </div>
+    <div class="menu-item">
+      <img src="menu3.jpg" alt="চিকেন বার্গার">
+      <h3>চিকেন বার্গার</h3>
+      <p>১০০ টাকা</p>
+    </div>
+    <div class="menu-item">
+      <img src="menu4.jpg" alt="খাটামাটা">
+      <h3>খাটামাটা</h3>
+      <p>৫০ টাকা</p>
+    </div>
+    <div class="menu-item">
+      <img src="menu5.jpg" alt="ফ্রেন্স ফ্রাই">
+      <h3>ফ্রেন্স ফ্রাই</h3>
+      <p>৫০ টাকা</p>
+    </div>
+    <div class="menu-item">
+      <img src="menu6.jpg" alt="হট কফি">
+      <h3>হট কফি</h3>
+      <p>৫০ টাকা</p>
+    </div>
+    <div class="menu-item">
+      <img src="menu7.jpg" alt="কোল্ড কফি">
+      <h3>কোল্ড কফি</h3>
+      <p>৭০ টাকা</p>
+    </div>
+    <div class="menu-item">
+      <img src="menu8.jpg" alt="লেয়ার চা">
+      <h3>লেয়ার চা</h3>
+      <p>৩০ টাকা</p>
+    </div>
+    <div class="menu-item">
+      <img src="menu9.jpg" alt="পপকর্ন">
+      <h3>পপকর্ন</h3>
+      <p>২০ টাকা</p>
+    </div>
+    <div class="menu-item">
+      <img src="menu10.jpg" alt="ঝাল মুড়ি">
+      <h3>ঝাল মুড়ি</h3>
+      <p>২০ টাকা</p>
     </div>
   </section>
 
-  <section id="outlets">
-    <h2>শাখাসমূহ</h2>
-    <p>সাদামাটা ভিলেজ, সামাজিক ভার্সিটি মোড়, একতারপুর, অভয়নগর, যশোর।</p>
-  </section>
-
-  <section id="contact">
-  <h2>যোগাযোগ</h2>
-  <p>ফোন: <a href="tel:01712658849">০১৭১২৬৫৮৮৪৯</a></p>
-  <p>হোয়াটসঅ্যাপ: 
-    <a href="https://wa.me/8801712658849" target="_blank">চ্যাট করুন WhatsApp-এ</a>
-  </p>
-  <p>ইমেইল: info@sadamatacoffeehouse.com</p>
-</section>
-
   <footer>
-    <p>&copy; ২০২৫ Sadamata Coffee House</p>
+    &copy; ২০২৫ Sadamata Coffee House
   </footer>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slides img");
+
+    function showSlides() {
+      slides.forEach((slide) => slide.classList.remove("active"));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+    }
+
+    setInterval(showSlides, 3000);
+  </script>
 
 </body>
 </html>
